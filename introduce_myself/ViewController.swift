@@ -9,8 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var lastNameLabel: UILabel!
     @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var schoolNameLabel: UILabel!
     @IBOutlet weak var schoolNameTextField: UITextField!
     @IBOutlet weak var academicYearSegmentController: UISegmentedControl!
     @IBOutlet weak var numPetsLabel: UILabel!
@@ -31,9 +34,9 @@ class ViewController: UIViewController {
     
     @IBAction func continueButtonTapped(_ sender: UIButton) {
         let textFields: [String: String] = [
-            "First name": firstNameTextField!.text!,
-            "Last name": lastNameTextField!.text!,
-            "School name": schoolNameTextField!.text!,
+            firstNameLabel!.text!: firstNameTextField!.text!,
+            lastNameLabel!.text!: lastNameTextField!.text!,
+            schoolNameLabel!.text!: schoolNameTextField!.text!,
         ]
         for label in textFields.keys {
             if textFields[label]!.isEmpty {
@@ -48,7 +51,6 @@ class ViewController: UIViewController {
             "attending \(trim(schoolNameTextField.text!)). I have \(numPetsLabel.text!) \(Int(numPetsLabel.text!) == 1 ? "pet" : "pets") " +
             "and would \(wantsMorePetsSwitch.isOn ? "" : "not") like to have more."
         )
-        
         let alert = UIAlertController(title: "Welcome", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Nice", style: .cancel))
         present(alert, animated: true, completion: nil)

@@ -124,10 +124,13 @@
                     <connections>
                         <outlet property="academicYearSegmentController" destination="yC9-4v-Ynd" id="RHd-i7-jvt"/>
                         <outlet property="continueButton" destination="qhP-zy-yGd" id="w1J-2D-xOb"/>
+                        <outlet property="firstNameLabel" destination="xMp-aL-jzB" id="x6z-j6-ZJl"/>
                         <outlet property="firstNameTextField" destination="Yzy-mt-PeE" id="vak-gA-uvL"/>
+                        <outlet property="lastNameLabel" destination="5wG-V8-r60" id="SHv-Ar-e8a"/>
                         <outlet property="lastNameTextField" destination="Bb1-Jv-1yp" id="cGH-Sw-fK4"/>
                         <outlet property="numPetsLabel" destination="q8W-BR-Rjj" id="4pV-FK-aAN"/>
                         <outlet property="numPetsStepper" destination="vLy-W6-o2X" id="9lv-q1-mQ4"/>
+                        <outlet property="schoolNameLabel" destination="NVD-F3-QaT" id="PpH-Pm-87X"/>
                         <outlet property="schoolNameTextField" destination="N9g-1b-2ll" id="U7D-en-3nf"/>
                         <outlet property="wantsMorePetsSwitch" destination="CJB-XJ-kqI" id="3s1-yr-RAl"/>
                     </connections>
