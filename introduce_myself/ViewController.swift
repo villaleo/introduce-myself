@@ -34,9 +34,9 @@ class ViewController: UIViewController {
     
     @IBAction func continueButtonTapped(_ sender: UIButton) {
         let textFields: [String: String] = [
-            firstNameLabel!.text!: firstNameTextField!.text!,
-            lastNameLabel!.text!: lastNameTextField!.text!,
-            schoolNameLabel!.text!: schoolNameTextField!.text!,
+            firstNameLabel.text!: firstNameTextField.text!,
+            lastNameLabel.text!: lastNameTextField.text!,
+            schoolNameLabel.text!: schoolNameTextField.text!,
         ]
         for label in textFields.keys {
             if textFields[label]!.isEmpty {
