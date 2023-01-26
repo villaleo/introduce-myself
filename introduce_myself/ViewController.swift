@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         }
         
         let year: String = academicYearSegmentController.titleForSegment(at: academicYearSegmentController.selectedSegmentIndex)!
-        var message: String = (
+        let message: String = (
             "Hey! I'm \(trim(firstNameTextField.text!)) \(trim(lastNameTextField.text!)) and I'm a \(year.lowercased()) year student " +
             "attending \(trim(schoolNameTextField.text!)). I have \(numPetsLabel.text!) \(Int(numPetsLabel.text!) == 1 ? "pet" : "pets") " +
             "and would \(wantsMorePetsSwitch.isOn ? "" : "not") like to have more."
