@@ -21,17 +21,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Code source for dismissing keyboard on tap => https://stackoverflow.com/a/48592991
-        let tap = UITapGestureRecognizer(target: self, action: #selector(
-            UIInputViewController.dismissKeyboard
-        ))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
     
     @objc func dismissKeyboard() { view.endEditing(true) }
     
-    @IBAction func numPetsStepperChanged(_ sender: UIStepper) {
-        numPetsLabel.text = String(Int(sender.value))
-    }
+    @IBAction func numPetsStepperChanged(_ sender: UIStepper) { numPetsLabel.text = String(Int(sender.value)) }
     
     @IBAction func continueButtonTapped(_ sender: UIButton) {
         let textFields: [String: String] = [
@@ -46,19 +42,12 @@ class ViewController: UIViewController {
             }
         }
         
-        let year: String = academicYearSegmentController.titleForSegment(
-            at: academicYearSegmentController.selectedSegmentIndex
-        )!
+        let year: String = academicYearSegmentController.titleForSegment(at: academicYearSegmentController.selectedSegmentIndex)!
         var message: String = (
-            "Hey! I'm \(trim(firstNameTextField.text!)) \(trim(lastNameTextField.text!)) and I'm a " +
-            "\(year.lowercased()) year student attending \(trim(schoolNameTextField.text!)). " +
-            "I have \(numPetsLabel.text!) \(Int(numPetsLabel.text!) == 1 ? "pet" : "pets")"
+            "Hey! I'm \(trim(firstNameTextField.text!)) \(trim(lastNameTextField.text!)) and I'm a \(year.lowercased()) year student " +
+            "attending \(trim(schoolNameTextField.text!)). I have \(numPetsLabel.text!) \(Int(numPetsLabel.text!) == 1 ? "pet" : "pets") " +
+            "and would \(wantsMorePetsSwitch.isOn ? "" : "not") like to have more."
         )
-        if wantsMorePetsSwitch.isOn {
-            message += " and would like to have more."
-        } else {
-            message += ", but would not like any more."
-        }
         
         let alert = UIAlertController(title: "Welcome", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Nice", style: .cancel))
@@ -72,6 +61,4 @@ class ViewController: UIViewController {
     }
 }
 
-internal func trim(_ str: String) -> String {
-    return str.trimmingCharacters(in: CharacterSet(charactersIn: " "))
-}
+internal func trim(_ str: String) -> String { return str.trimmingCharacters(in: CharacterSet(charactersIn: " ")) }
