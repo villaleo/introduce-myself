@@ -65,13 +65,13 @@ class ViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    private func alertEmptyTextField(_ textFieldName: String) {
+    internal func alertEmptyTextField(_ textFieldName: String) {
         let alert = UIAlertController(title: "Error", message: "\(textFieldName) cannot be empty.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
         present(alert, animated: true, completion: nil)
     }
 }
 
-func trim(_ str: String) -> String  {
+internal func trim(_ str: String) -> String {
     return str.trimmingCharacters(in: CharacterSet(charactersIn: " "))
 }
